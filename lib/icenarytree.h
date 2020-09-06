@@ -39,7 +39,7 @@ typedef struct node node;
 // for mem use
 void icetree_xfree(void **ptr); 
 volatile void *icetree_burn_mem(volatile void *, int , size_t );
-static void *icetree_xmalloc_fatal(size_t ); 
+void *icetree_xmalloc_fatal(size_t ); 
 void *icetree_xmalloc (size_t ); 
 void traversal_and_destroy(node *,void (*lambda)(void *argvs));
 

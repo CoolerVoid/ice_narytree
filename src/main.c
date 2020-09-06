@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "icenarytree.h"
+#include "../lib/icenarytree.h"
 
 
 
@@ -66,7 +66,7 @@ void inter_free_treeleafs(void *argv)
 
 
 
-int main(int argc, char *argv[])
+int main()
 {
 
 	// Insert data in nodes
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 	insert_child_before(root,4,23,F);
 
 	// CUSTOM SHOW ALL DATA
-//	interate_traversal_tree(root,inter_data);
+	interate_traversal_tree(root,inter_data);
 	
 	// liberate heap memory, destroy all tree
 	traversal_and_destroy(root,inter_free_treeleafs);

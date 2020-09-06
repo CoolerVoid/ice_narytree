@@ -27,7 +27,7 @@ volatile void *icetree_burn_mem(volatile void *dst, int c, size_t len)
 }
 
 
-static void *icetree_xmalloc_fatal(size_t size) 
+void *icetree_xmalloc_fatal(size_t size) 
 {
 	if ( size == 0 ) 
 		return NULL;
