@@ -2,7 +2,7 @@
 ICE narytree is a Open Source C library to help in n-ary tree creation and work(traversal, search, create nodes, insert childs/siblings, destroy tree).
 
 You can use trees to solve file system problems, static analysis problems,  like recursive tree with N points with childs...
-<img align="right" width="240" height="220" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tree_%28computer_science%29.svg/220px-Tree_%28computer_science%29.svg.png">
+<img align="right" width="240" height="220" src="https://raw.githubusercontent.com/CoolerVoid/icenarytree/master/doc/wide-shot-isolated-tree-covered-snow-snowy-area-just-like-fairytale_181624-5468.jpg">
 
 In computer science, a tree is a widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root.
 
