@@ -28,6 +28,23 @@ $ ./bin/test_tree
 $ cat src/main.c
 ```
 
+No memory leaks
+--
+
+Look this content(tested with valgrind)
+```
+$ cat heap_log/valgrind_output.txt | tail 
+ ==63855== 
+==63855== HEAP SUMMARY:
+==63855==     in use at exit: 0 bytes in 0 blocks
+==63855==   total heap usage: 47 allocs, 47 frees, 10,399 bytes allocated
+==63855== 
+==63855== All heap blocks were freed -- no leaks are possible
+==63855== 
+==63855== For counts of detected and suppressed errors, rerun with: -v
+==63855== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+
 
 
 Next resources:
