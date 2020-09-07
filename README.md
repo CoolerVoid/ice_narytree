@@ -6,9 +6,6 @@ You can use trees to solve file system problems, static analysis problems,  like
 
 In computer science, a tree is a widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root.
 
-<img align="right" width="240" height="220" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tree_%28computer_science%29.svg">
-
-
 First step, understand before run
 --
 
@@ -16,7 +13,7 @@ Study the src/main.c to understand how to use...
 Study calls to know how to use  lib...  lib/icenarytree.h
 
 any doubts... create issue or send me a e-mail...
-
+<img align="right" width="240" height="220" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tree_%28computer_science%29.svg">
 
 Second step, testing!
 --
