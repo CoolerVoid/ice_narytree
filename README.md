@@ -41,4 +41,5 @@ Next resources:
 References:
 --
 https://en.wikipedia.org/wiki/Tree_(data_structure)
+
 https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/ (The best C book)
