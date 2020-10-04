@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <assert.h>
 
-// alocation tasks
+// alocation tasks, use this in future
 void icetree_xfree(void **ptr) 
 {
 	assert(ptr);
@@ -16,7 +16,7 @@ void icetree_xfree(void **ptr)
 	
 }
 
-   
+// use this in the future   
 volatile void *icetree_burn_mem(volatile void *dst, int c, size_t len) 
 {
 	volatile char *buf;
@@ -49,6 +49,7 @@ void *icetree_xmalloc(size_t size)
 
 
 
+
 void traversal_and_destroy(struct node *root,void (*lambda)(void *argvs))
 {
 	if(root == NULL) 
@@ -58,7 +59,7 @@ void traversal_and_destroy(struct node *root,void (*lambda)(void *argvs))
 	traversal_and_destroy(root->child,lambda);
 
 	lambda(root->data);
-
+	root->data=NULL;
     	free(root);
 	root=NULL;
 	// XFREE_ICETREE(root);
@@ -110,33 +111,26 @@ node * search_in_tree_per_position(struct node *root, int position)
 
 
 
+bool remove_node_childs_by_position(struct node *root, int position,void (*lambda)(void *argvs)) 
+{
+	struct node *current = root;
+	
+	current=search_in_tree_per_position(current,position);
+	traversal_and_destroy(current->child,lambda);	
+	current->child=NULL;
+
+   	return true;
+}
+
+
 node * insert_sibling_before(struct node *root, int position,int new_position, void *data) 
 {
 	struct node *current = root;
 
-	while(current->position != position) 
-	{
-		if(current->position > position) 
-			current = current->child;
-      		else 
-         		current = current->next;
-      		if(current == NULL) 
-         		return NULL;   
-   	}
-   
-   	node *new_node = icetree_xmalloc(sizeof(node));
+	current=search_in_tree_per_position(current,position);
 
-   	if(new_node) 
-   	{
-		new_node->next = NULL;
-		new_node->child = NULL;
-		new_node->position = new_position;
-		new_node->data = data;
-   	}
+	return(current->next = new_node(new_position,data));
 
-   	current->next=new_node;
-
-   	return current;
 }
 
 
@@ -144,29 +138,14 @@ node * insert_child_before(struct node *root, int position,int new_position, voi
 {
 	struct node *current = root;
 
-	while(current->position != position) 
-	{
-		if(current->position > position) 
-			current = current->child;
-      		else 
-         		current = current->next;
-      		if(current == NULL) 
-         		return NULL;   
-   	}
-   
-   	node *new_node = icetree_xmalloc(sizeof(node));
 
-   	if(new_node) 
-   	{
-		new_node->next = NULL;
-		new_node->child = NULL;
-		new_node->position = new_position;
-		new_node->data = data;
-   	}
+	current=search_in_tree_per_position(current,position);
 
-   	current->child=new_node;
-
-   	return current;
+    	if(current->child)
+		return append_sibling(current->child, new_position,data);
+	else
+       		return(current->child=new_node(new_position,data));
+   	
 }
 
 void traversal_tree_dbg(struct node *root)
@@ -217,3 +196,5 @@ node * append_child(node * n, int position, void *data)
 	else
 		return (n->child = new_node(position,data));
 }
+
+

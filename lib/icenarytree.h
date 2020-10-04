@@ -52,3 +52,4 @@ node * insert_child_before(node *,int , int, void *);
 node * insert_sibling_before(node *,int , int, void *);
 void interate_traversal_tree(node *,void (*lambda)(void *argvs));
 void traversal_tree_dbg(node *);
+bool remove_node_childs_by_position(node *, int ,void (*lambda)(void *argvs));
