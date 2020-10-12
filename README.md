@@ -21,7 +21,7 @@ Second step, testing!
 
 Look this following commands to run:
 ```
-$ git clone https://github.com/CoolerVoid/icenarytree
+$ git clone https://github.com/CoolerVoid/ice_narytree
 $ cd icenarytree
 $ make
 $ ./bin/test_tree
