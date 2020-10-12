@@ -11,7 +11,7 @@ else
 endif
 
 all: 
-	$(CC) -o bin/test_tree src/main.c lib/icenarytree.h lib/icenarytree.c $(CFLAGS) $(LDFLAGS)
+	$(CC) -o bin/test_tree src/main.c lib/ice_narytree.h lib/ice_narytree.c $(CFLAGS) $(LDFLAGS)
 
 clean:
 	rm -rf *.o bin/*

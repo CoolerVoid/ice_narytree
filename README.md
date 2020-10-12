@@ -22,7 +22,7 @@ Second step, testing!
 Look this following commands to run:
 ```
 $ git clone https://github.com/CoolerVoid/ice_narytree
-$ cd icenarytree
+$ cd ice_narytree
 $ make
 $ ./bin/test_tree
 $ cat src/main.c

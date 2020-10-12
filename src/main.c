@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "../lib/icenarytree.h"
+#include "../lib/ice_narytree.h"
 
 
 
@@ -75,7 +75,7 @@ int main()
 
 	// Insert data in nodes
 	void *A=form_data(false,"attribute","x=0","x",10);
-	node *root = new_node(0,A);
+	ice_tree_node *root = new_node(0,A);
 
 	void *B=form_data(false,"attribute","x+=2","x",11);
         append_child(root, 1,B);
@@ -93,7 +93,7 @@ int main()
     	traversal_tree_dbg(root);
 
 	//Search by POSITION NODE
-	node *ret=search_in_tree_per_position(root,3);
+	ice_tree_node *ret=search_in_tree_per_position(root,3);
 	if(ret != NULL && ret->position != 0)
 		printf("\nResult found: %d \n",ret->position);
 
