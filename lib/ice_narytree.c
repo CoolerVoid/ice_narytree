@@ -1,8 +1,4 @@
 #include "ice_narytree.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <assert.h>
 
 // alocation tasks, use this in future
 void icetree_xfree(void **ptr) 
