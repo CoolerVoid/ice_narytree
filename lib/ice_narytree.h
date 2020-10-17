@@ -1,3 +1,6 @@
+#ifndef __ICE_NARYTREE_H__
+#define __ICE_NARYTREE_H__
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -28,10 +31,10 @@
 #define XFREE_ICETREE(x) icetree_xfree((void **)x);
 
 struct icetreenode  {
-    int position;
     void *data;
     struct icetreenode *next;
     struct icetreenode *child;
+    int position;
 };
 
 typedef struct icetreenode ice_tree_node;
@@ -53,3 +56,5 @@ ice_tree_node * insert_sibling_before(ice_tree_node *,int , int, void *);
 void interate_traversal_tree(ice_tree_node *,void (*lambda)(void *argvs));
 void traversal_tree_dbg(ice_tree_node *);
 bool remove_node_childs_by_position(ice_tree_node *, int ,void (*lambda)(void *argvs));
+
+#endif
